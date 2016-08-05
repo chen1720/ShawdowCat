@@ -15,7 +15,7 @@ classifierModel = "/home/qchenldr/Downloads/featuredata2/classifier.pkl"
 facelist = {'person-1':'Lucas','person-2':'Tapan','person-3':'Qiming',
 	'person-4':'Deepali','person-5':'Yodar','Unknown':'Unknown'}
 
-capture = cv2.VideoCapture(1)
+capture = cv2.VideoCapture(2)
 capture.set(3,480)
 capture.set(4,600)
 align = openface.AlignDlib(dlibFacePredictor)
