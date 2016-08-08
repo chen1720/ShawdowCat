@@ -1,0 +1,12 @@
+#!/bin/bash
+# FR script
+python /home/qchenldr/Downloads/FRcapture.py
+echo "Your training data has been saved!"
+rm /home/qchenldr/Downloads/aligndata2/cache.t7
+/home/qchenldr/openface/batch-represent/main.lua -outDir /home/qchenldr/Downloads/featuredata2 -data /home/qchenldr/Downloads/aligndata2
+echo "Representations generated!"
+python /home/qchenldr/Downloads/FRclassifier.py
+echo "Training completed!"
+echo "Starting Prediction..."
+echo "Please Type your name"
+python /home/qchenldr/Downloads/FRrun.py
