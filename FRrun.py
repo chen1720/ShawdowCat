@@ -103,7 +103,7 @@ while(1):
 
         for j,c in enumerate(confidences):
             conf.append(round(c,2))
-            if c<=0.65:
+            if c<=0.70:
                 persons[j] = "Unknown"
 
         for i,box in enumerate(bb):
@@ -111,9 +111,9 @@ while(1):
             y.append(box.top())
             w.append(box.width())
             h.append(box.height())
-            cv2.rectangle(frame, (x[i],y[i]),(x[i]+w[i],y[i]+h[i]),(255,0,0),2)
-            cv2.putText(frame, "Hello {}! {}".format(facelist[persons[i]],conf[i]),
-                        (x[i]-100, y[i]-20), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255,0,0),2)
+            cv2.rectangle(frame, (x[i],y[i]),(x[i]+w[i],y[i]+h[i]),(255,128,0),2)
+            cv2.putText(frame, "Hello {} {}".format(facelist[persons[i]],conf[i]),
+                        (x[i]-100, y[i]-20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255,128,0),2)
 
 	cv2.imshow('detection',frame)
 	    

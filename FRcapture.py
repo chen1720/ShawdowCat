@@ -51,10 +51,17 @@ if not os.path.exists(rawDir):
     os.mkdir(rawDir)
 print("Initializing...")
 time.sleep(2)
-print("Please look at the right camera until the blue light is off..")
-time.sleep(3)
+print("Please look at the camera..")
+time.sleep(2)
 
 while(num<20):
+    if num == 5:
+        print("Please loot at the right screen")
+        time.sleep(2)
+    if num == 13:
+        print("Please loot at the left screen")
+        time.sleep(2)
+    
     box = []
     _,frame = capture1.read()
     frameo = frame.copy()
